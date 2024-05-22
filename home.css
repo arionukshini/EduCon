@@ -1,0 +1,637 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(images/background.png) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* stilizimi i pjeses se header, pra naviguesi dhe pjesa poshte saj */
+
+.header {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    background-color: rgb(139, 102, 90);
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    margin: 5px 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+}
+
+.active {
+    background-color: black;
+    padding: 5px 10px 5px;
+}
+
+.nav-links li a:hover {
+    color: brown;
+    transition: 0.5s;
+}
+
+/* stilizimi i pjeses dropdown tek profili */
+
+.welcome {
+    color: white;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.user-pfp {
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(139, 102, 90);
+    border: 2px solid black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.dropdown-content a img {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.dropdown-content a:hover {
+    background-color: #c4c4c4;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+/* stilizimi i pjeses se perdrouesve, pra tables qe paraqet perderouesit */
+
+.users-title {
+    margin: 10px 0;
+}
+
+.users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-container {
+    display: flex;
+    width: 80%;
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #8b665a #201b1e;
+    justify-items: center;
+}
+
+.table-container2 {
+    display: flex;
+    width: 90%;
+    max-height: 500px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #8b665a #201b1e;
+    justify-items: center;
+}
+
+table {
+    width: 99%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    z-index: 0;
+}
+
+h2 {
+    color: white;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid white;
+    color: white;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: rgb(139, 102, 90);
+    z-index: 1;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.seperator {
+    width: 100%;
+    border-color: white;
+    margin: 10px 0;
+}
+
+.edit-delete {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+.input-group,
+.interests {
+    color: white;
+    margin: 0 5px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100px;
+    height: 20px;
+    align-items: center;
+}
+
+.interests input {
+    height: 20px;
+}
+
+.buttons {
+    justify-content: center;
+    align-content: center;
+}
+
+.edit-delete .buttons button {
+    margin: 0 5px;
+    margin-top: 10px;
+    background-color: white;
+    height: 30px;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid black;
+}
+
+/* silizimi i ballines, pjesa e pare eshte per regjistrimin e nje perdoruesi te ri dhe e dyta per aplikimin per giveaway */
+
+.home-container {
+    max-width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-signup-form {
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    padding: 35px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.home-container .login-signup-form .login {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-container .login-signup-form .login .input-groups-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-container .login-signup-form .login .half-group {
+    width: 48%;
+}
+
+.home-container .login-signup-form .login .half-group:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.home-container .login-signup-form .login .input-group {
+    width: 100%;
+}
+
+.home-container .login-signup-form .login .login-text {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.home-container .login-signup-form .login .input-group {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: white;
+}
+
+.home-container .login-signup-form .login .input-group input {
+    color: white;
+    background: transparent;
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid white;
+    border-radius: 40px;
+    outline: none;
+    transition: .3s;
+}
+
+#gender,
+#birthday,
+#position,
+#interests {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+#male,
+#female,
+#math,
+#sports,
+#science {
+    width: 35%;
+    height: 35%;
+}
+
+#date {
+    height: 30px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-left: 18px;
+}
+
+#positionSelect {
+    width: 100%;
+    height: 30px;
+    margin-left: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.home-container .login-signup-form .login .input-group input:focus,
+.home-container .login-signup-form .login .input-group input:valid {
+    border-color: black;
+}
+
+.home-container .login-signup-form .login .input-group .btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 15px;
+    text-align: center;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 40px;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.home-container .login-signup-form .login .input-group .btn:hover {
+    background-color: black;
+    color: white;
+    transform: translateY(-5px);
+    transition: .3s ease;
+}
+
+.home-container .login-signup-form .input-groups-container .half-group .input-group p,
+.home-container .login-signup-form .input-groups-container .half-group .input-group input,
+.home-container .login-signup-form .input-groups-container .half-group .input-group label {
+    font-size: 16px;
+}
+
+/* pjesa e dyte */
+
+.giveaway-form {
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    padding: 35px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.9));
+    border: 2px dotted white;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.home-container .giveaway-form .giveaway {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-container .giveaway-form .giveaway .input-group {
+    width: 100%;
+}
+
+.home-container .giveaway-form .giveaway .giveaway-text {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.home-container .giveaway-form .giveaway .input-group {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: white;
+}
+
+.home-container .giveaway-form .giveaway .input-group input {
+    color: white;
+    background: transparent;
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid white;
+    border-radius: 40px;
+    outline: none;
+    transition: .3s;
+}
+
+#employed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+#yes,
+#no {
+    width: 35%;
+    height: 35%;
+}
+
+#subjectSelect {
+    width: 100%;
+    height: 36px;
+    padding: 5px 20px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    border-radius: 40px;
+}
+
+#subjectSelect option {
+    color: black;
+}
+
+#reason {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    resize: none;
+}
+
+.home-container .giveaway-form .giveaway .input-group input:focus,
+.home-container .giveaway-form .giveaway .input-group input:valid {
+    border-color: black;
+}
+
+.home-container .giveaway-form .giveaway .input-group .btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 15px;
+    text-align: center;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 40px;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.home-container .giveaway-form .giveaway .input-group .btn:hover {
+    background-color: black;
+    color: white;
+    transform: translateY(-5px);
+    transition: .3s ease;
+}
+
+.sub-title {
+    margin: 20px 0 10px;
+    text-align: center;
+    font-size: 2.2vw;
+    font-weight: 600;
+}
+
+.description {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* stilizimi i pjeses se qmimeve */
+
+#pricing {
+    display: flex;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+    padding: 0 7%;
+}
+
+.card {
+    padding: 30px 75px;
+    border: 5px solid black;
+    border-radius: 10px;
+    margin: 0 10px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 5px 15px 0 rgba(130, 130, 130, 0.3), 0 5px 15px 0 rgba(130, 130, 130, 0.3);
+    width: 70%;
+    position: relative;
+    cursor: pointer;
+}
+
+.main {
+    width: 75%;
+    height: 105%;
+    border-width: 6px;
+    padding-top: 60px;
+}
+
+.card:hover {
+    transition: 0.5s;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.4), 0 5px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.card i {
+    font-size: 60px;
+    color: rgb(143, 92, 83);
+}
+
+.card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.card p {
+    text-align: center;
+    font-size: 28px;
+    color: rgb(143, 92, 83);
+    font-weight: 600;
+}
+
+.card p span {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.card span {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(143, 92, 83);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 50px;
+    font-size: 22px;
+}
+
+.card a:hover {
+    background-color: rgb(139, 82, 41);
+    color: white;
+}
+
+/* silizimi i pjeses se shkarkimit te aplikacionit (downloads) */
+
+.download-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px 50px 20px;
+}
+
+.download-section .video {
+    display: flex;
+    flex-direction: column;
+}
+
+.download-section h3 {
+    color: white;
+    font-size: 32px;
+}
+
+.download-section .video video {
+    width: 600px;
+    height: 370px;
+}
+
+.download-section .download-link {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    align-items: end;
+    color: white;
+    width: 45%;
+}
+
+.download-section .download-link p {
+    font-size: 22px;
+}
+
+
+.download-section .download-link a {
+    background-color: saddlebrown;
+    border: none;
+    border-radius: 20px;
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    margin-top: 70px;
+    padding: 16px 40px;
+    text-align: center;
+    width: 220px;
+}
+
+.about-info {
+    font-size: 20px;
+    text-align:center;
+    margin: 30px 20px 0;
+    color: white;
+}
